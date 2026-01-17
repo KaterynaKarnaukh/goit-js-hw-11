@@ -1,8 +1,11 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+import 'css-loader';
+
+
 
 const gallery = document.querySelector('.gallery');
-const loaderContainer = document.querySelector('.loader-container');
+const loaderContainer = document.querySelector('.loader');
 
 // Створюємо екземпляр SimpleLightbox
 let lightbox = new SimpleLightbox('.gallery a', {
@@ -54,9 +57,9 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-  loaderContainer.classList.add('visible');
+  loaderContainer.classList.remove('is-hidden');
 }
 
 export function hideLoader() {
-  loaderContainer.classList.remove('visible');
+  loaderContainer.classList.add('is-hidden');
 }
